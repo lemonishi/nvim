@@ -25,7 +25,7 @@ return {
                     vim.cmd.Git({'pull',  '--rebase'})
                 end, opts)
 
-                vim.keymap.set("n", "<leader>gb", function()
+                vim.keymap.set("n", "<leader>gcb", function()
                     local branch_name = vim.fn.input("Branch name: ")
                     if branch_name ~= "" then
                         vim.cmd.Git({'checkout', '-b', branch_name})
