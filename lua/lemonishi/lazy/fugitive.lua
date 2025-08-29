@@ -30,7 +30,7 @@ return {
                     if branch_name ~= "" then
                         vim.cmd.Git({'checkout', '-b', branch_name})
                     end
-                end
+                end)
 
                 -- NOTE: It allows me to easily set the branch i am pushing and any tracking
                 -- needed if i did not set the branch up correctly
