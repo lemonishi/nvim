@@ -25,6 +25,13 @@ return {
                     vim.cmd.Git({'pull',  '--rebase'})
                 end, opts)
 
+                vim.keymap.set("n", "<leader>gb", function()
+                    local branch_name = vim.fn.input("Branch name: ")
+                    if branch_name ~= "" then
+                        vim.cmd.Git({'checkout', '-b', branch_name})
+                    end
+                end
+
                 -- NOTE: It allows me to easily set the branch i am pushing and any tracking
                 -- needed if i did not set the branch up correctly
                 vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts);
